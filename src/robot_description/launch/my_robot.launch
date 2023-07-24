@@ -14,7 +14,6 @@
   </include>
   
   <!-- Launch Gazebo with the dynamic person obstacle -->
-  <!-- Uncomment the following node to launch the obstacle plugin -->
  
   <!--node name="obstacle_plugin" pkg="robot_description" type="obstacle_plugin.py" output="screen"/-->
   
