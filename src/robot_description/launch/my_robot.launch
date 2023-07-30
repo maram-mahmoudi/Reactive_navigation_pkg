@@ -1,48 +1,20 @@
 <launch>
-  <!-- Load the SDF model file -->
-  <arg name="robot_sdf" default="$(find robot_description)/sdf/follower_vehicle.sdf" />
-  <arg name="world" default="$(find robot_description)/worlds/industrial_world.world" />
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="x_pos" default="-3.0"/>
+  <arg name="y_pos" default="1.0"/>
+  <arg name="z_pos" default="0.0"/>
 
-  <!-- Launch Gazebo with the specified world file and spawn the robot model -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(arg world)" />
-    <arg name="paused" value="false" />
-    <arg name="use_sim_time" value="true" />
-    <arg name="gui" value="true" />
-    <arg name="headless" value="false" />
-    <arg name="debug" value="false" />
+    <arg name="world_name" value="$(find robot_description)/worlds/industrial_world.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
   </include>
   
-  <!-- Launch Gazebo with the dynamic person obstacle -->
- 
-  <!--node name="obstacle_plugin" pkg="robot_description" type="obstacle_plugin.py" output="screen"/-->
-  
+  <!-- the xacro packages & files come with ros in general, they dont have to be in the same package -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
 
-  <!-- Parameters for the DiffDrive plugin -->
-  <rosparam command="load" file="$(find robot_description)/config/follower_diff_drive.yaml" />
-
-  <!-- Spawn the follower vehicle model in Gazebo -->
-  <node name="spawn_follower_vehicle" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-sdf -file $(arg robot_sdf) -model follower_vehicle">
-    <param name="robot_namespace" value="/follower_vehicle" />
-    <param name="publish_clock_frequency" value="50.0" />
-    <param name="use_sim_time" value="true" />
-  </node>
-  <rosparam>
-      commandTopic: "cmd_vel"
-      odometryTopic: "odom"
-      odometryFrame: "odom"
-      robotBaseFrame: "base_link"
-      publishWheelTF: true
-      publishOdomTF: true
-      publishWheelJointState: true
-      wheelSeparation: 0.34
-      wheelDiameter: 0.15
-      wheelAcceleration: 0
-      wheelTorque: 5
-      updateRate: 100
-      odometrySource: 1
-      leftJoint: "left_wheel_joint"
-      rightJoint: "right_wheel_joint"
-    </rosparam>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model turtlebot3 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
 </launch>
