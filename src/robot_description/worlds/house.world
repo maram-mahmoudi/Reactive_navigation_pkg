@@ -6686,81 +6686,11 @@
       </plugin>
       <pose>-3 1 0 0 -0 0</pose>
     </model>
-    <model name='person_walking'>
-      <link name='link'>
-        <inertial>
-          <pose>0 0 0.95 0 -0 0</pose>
-          <mass>80</mass>
-          <inertia>
-            <ixx>27.82</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>24.88</iyy>
-            <iyz>0</iyz>
-            <izz>4.57</izz>
-          </inertia>
-        </inertial>
-        <collision name='bottom'>
-          <pose>0 0 0.01 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.35 0.75 0.02</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <collision name='person'>
-          <pose>0 0 -0.02 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://person_walking/meshes/walking.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose>0 0 -0.02 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://person_walking/meshes/walking.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-1.07316 3.2815 0 0 -0 0</pose>
-    </model>
     <state world_name='default'>
-      <sim_time>2507 13000000</sim_time>
-      <real_time>4242 598185768</real_time>
-      <wall_time>1690719955 226388550</wall_time>
-      <iterations>2507013</iterations>
+      <sim_time>2667 434000000</sim_time>
+      <real_time>161 757718423</real_time>
+      <wall_time>1690797714 891892343</wall_time>
+      <iterations>160421</iterations>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -6771,34 +6701,24 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='person_walking'>
-        <pose>-1.07316 3.2815 -1e-06 -2e-06 -0 -0.000109</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-1.07316 3.2815 -1e-06 -2e-06 -0 -0.000109</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.016751 2.16444 -2.20392 -2.27838 0.012044 -0.012693</acceleration>
-          <wrench>1.34011 173.155 -176.313 0 -0 0</wrench>
-        </link>
-      </model>
       <model name='turtlebot3'>
-        <pose>-3.00031 1.00157 -0.001001 -1.4e-05 0.007706 0.024731</pose>
+        <pose>-3.00033 1.00168 -0.001001 -1.4e-05 0.007706 0.026476</pose>
         <scale>1 1 1</scale>
         <link name='base_footprint'>
-          <pose>-3.00031 1.00157 -0.001001 -1.4e-05 0.007706 0.024731</pose>
-          <velocity>-0 2e-06 3.6e-05 4.4e-05 -0.000179 2.4e-05</velocity>
+          <pose>-3.00033 1.00168 -0.001001 -1.4e-05 0.007706 0.026476</pose>
+          <velocity>-0 2e-06 3.6e-05 4.5e-05 -0.000178 2.5e-05</velocity>
           <acceleration>-0 0 -0 0 -0 0</acceleration>
           <wrench>-0 0 -0 0 -0 0</wrench>
         </link>
         <link name='wheel_left_link'>
-          <pose>-3.00203 1.08155 0.031997 -1.57002 -0.053223 0.024683</pose>
-          <velocity>-8e-06 -0 3.9e-05 3.2e-05 -0.000186 1.9e-05</velocity>
+          <pose>-3.00219 1.08166 0.031997 -1.57002 -0.057554 0.026425</pose>
+          <velocity>-9e-06 -0 3.9e-05 3.2e-05 -0.000184 1.9e-05</velocity>
           <acceleration>-0 0 -0 0 -0 0</acceleration>
           <wrench>-0 0 -0 0 -0 0</wrench>
         </link>
         <link name='wheel_right_link'>
-          <pose>-2.99807 0.921596 0.031999 -1.57002 0.066328 0.024776</pose>
-          <velocity>-4e-06 -0 3.3e-05 3.2e-05 -0.000169 2.9e-05</velocity>
+          <pose>-2.99795 0.921711 0.031999 -1.57002 0.070476 0.026525</pose>
+          <velocity>-4e-06 -0 3.3e-05 3.2e-05 -0.000169 3e-05</velocity>
           <acceleration>0 0 -0 0 -0 0</acceleration>
           <wrench>0 0 -0 0 -0 0</wrench>
         </link>
@@ -6936,7 +6856,7 @@
           <pose>0.883462 -0.576236 0 0 0 -3.14159</pose>
           <scale>1 1 1</scale>
           <link name='link'>
-            <pose>0.883462 -0.576236 0 0 -2e-06 -3.14159</pose>
+            <pose>0.883462 -0.576236 -1e-05 -2e-06 -0 -3.14159</pose>
             <velocity>0 0 0 0 -0 0</velocity>
             <acceleration>0 0 -9.8 0 -0 0</acceleration>
             <wrench>0 0 -9.8 0 -0 0</wrench>
@@ -7026,30 +6946,30 @@
           <pose>1.88346 1.91193 0 0 -0 0</pose>
           <scale>1 1 1</scale>
           <link name='link'>
-            <pose>1.88347 1.91193 2e-06 2.5e-05 1.6e-05 -1.9e-05</pose>
+            <pose>1.88347 1.91193 -4e-06 -1e-06 6e-06 -8.1e-05</pose>
             <velocity>0 0 0 0 -0 0</velocity>
-            <acceleration>-3.42099 5.42201 5.59884 0.986198 -0.136127 3.14153</acceleration>
-            <wrench>-16.526 26.1924 27.0466 0 -0 0</wrench>
+            <acceleration>-3.03139 -9.20311 16.8591 2.99664 -1.19413 3.14083</acceleration>
+            <wrench>-14.6439 -44.458 81.4423 0 -0 0</wrench>
           </link>
         </model>
         <model name='first_2015_trash_can_0'>
           <pose>-4.69354 4.89439 0 0 -0 0</pose>
           <scale>1 1 1</scale>
           <link name='link'>
-            <pose>-4.69353 4.89439 -1e-06 -8e-06 -1.6e-05 -1.8e-05</pose>
+            <pose>-4.69352 4.89439 -3e-06 1e-06 1.4e-05 -6.5e-05</pose>
             <velocity>0 0 0 0 -0 0</velocity>
-            <acceleration>2.37313 -1.57185 -1.91832 -2.01449 0.16013 0.001249</acceleration>
-            <wrench>11.464 -7.59321 -9.26696 0 -0 0</wrench>
+            <acceleration>4.79177 -0.686971 1.63035 1.86536 0.444103 0.00015</acceleration>
+            <wrench>23.1479 -3.31859 7.87585 0 -0 0</wrench>
           </link>
         </model>
         <model name='table'>
           <pose>-2.65728 2.42376 0 0 -0 0</pose>
           <scale>1 1 1</scale>
           <link name='link'>
-            <pose>-2.65728 2.42376 -2e-06 0 -0 0</pose>
+            <pose>-2.65728 2.42376 -1e-06 0 2e-06 0</pose>
             <velocity>0 0 0 0 -0 0</velocity>
-            <acceleration>0 0 -9.8 0 -0 0</acceleration>
-            <wrench>0 0 -9.8 0 -0 0</wrench>
+            <acceleration>7e-06 -0 -0.000346 0.11179 0.216085 0</acceleration>
+            <wrench>7e-06 -0 -0.000346 0 -0 0</wrench>
           </link>
         </model>
         <model name='table_marble'>

@@ -129,10 +129,10 @@
       <pose>9.5606 9.62208 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>142 94000000</sim_time>
-      <real_time>143 328214269</real_time>
-      <wall_time>1690755131 739036216</wall_time>
-      <iterations>142094</iterations>
+      <sim_time>247 526000000</sim_time>
+      <real_time>46 423320770</real_time>
+      <wall_time>1690833890 369332706</wall_time>
+      <iterations>46222</iterations>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -144,10 +144,10 @@
         </link>
       </model>
       <model name='iscas_museum'>
-        <pose>9.5606 9.62208 0 0 -0 0</pose>
+        <pose>3.17268 7.25399 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>9.5606 9.62208 0 0 -0 0</pose>
+          <pose>3.17268 7.25399 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -159,7 +159,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>37.9261 -82.3422 18.1967 0 0.379644 1.7882</pose>
+        <pose>0.382469 -10.4491 11.1263 -0 0.675643 1.5842</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
