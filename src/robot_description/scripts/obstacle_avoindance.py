@@ -8,10 +8,11 @@ def avoid_obstcle():
     global pub 
     rospy.init_node('turtlebot', anonymous=True)
     pub = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
-    sub = rospy.Subscriber('/scan', LaserScan, divide_zone_callback)
-    rospy.spin
-    rate = rospy.Rate(1) # 1hz
-    rate.sleep()
+    rospy.Subscriber('/scan', LaserScan, divide_zone_callback)
+    rate = rospy.Rate(1)  # 1hz
+
+    while not rospy.is_shutdown():
+        rate.sleep()
     
 def divide_zone_callback(data):
     #divide the scan data into zones with a threshhold of 10 
@@ -27,52 +28,64 @@ def divide_zone_callback(data):
 def navigation(regions):
     
     
-    min_distance = 1
-    linear_velocity = 0.5 
-    angular_velocity = 0.2
+    min_distance = 0.4
+    linear_velocity = 0.3 
+    angular_velocity = 0.1
     twist_msg = Twist()
     
     if regions['front'] > min_distance and regions['left'] > min_distance and regions['right'] > min_distance:
         #no obstacle  // can go right, left, or forward
         #chose forward
-        twist_msg.linear.x = linear_velocity
+        twist_msg.linear.x = -linear_velocity
         twist_msg.angular.z = 0
+        print("going forward, there s no obstacle")
     elif regions['front'] > min_distance and regions['left'] > min_distance and regions['right'] < min_distance:
         # right side is not safe // can go left or backward
         #chose left 
         twist_msg.linear.x = 0
-        twist_msg.angular.z = angular_velocity
+        twist_msg.angular.z = -angular_velocity
+        print("going left")
     elif regions['front'] > min_distance and regions['left'] < min_distance and regions['right'] > min_distance:
         # left is not safe // can go right or forward
         #chose right 
         twist_msg.linear.x = 0
-        twist_msg.angular.z = -angular_velocity
+        twist_msg.angular.z = angular_velocity
+        print("going right")
     elif regions['front'] < min_distance and regions['left'] > min_distance and regions['right'] > min_distance:
         # front is not safe  // can go backward, right or left
         #chose right
         twist_msg.linear.x = 0
-        twist_msg.angular.z = -angular_velocity
+        twist_msg.angular.z = angular_velocity
+        print("going right")
     elif regions['front'] < min_distance and regions['left'] < min_distance and regions['right'] < min_distance:
         # nothing is safe // can go backward only
-        twist_msg.linear.x = -linear_velocity
+        twist_msg.linear.x = linear_velocity
         twist_msg.angular.z = 0
+        print("going backward")
     elif regions['front'] < min_distance and regions['left'] < min_distance and regions['right'] > min_distance:
         # only right is safe
         twist_msg.linear.x = 0
-        twist_msg.angular.z = -angular_velocity
+        twist_msg.angular.z = angular_velocity
+        print("going right")
     elif regions['front'] < min_distance and regions['left'] > min_distance and regions['right'] < min_distance:
         # only left is safe
         twist_msg.linear.x = 0
-        twist_msg.angular.z = angular_velocity
+        twist_msg.angular.z = -angular_velocity
+        print("going left")
     elif regions['front'] > min_distance and regions['left'] < min_distance and regions['right'] < min_distance:
         # only front is safe
-        twist_msg.linear.x = linear_velocity
+        twist_msg.linear.x = -linear_velocity
         twist_msg.angular.z = 0
+        print("going forward, my only choice")
+    else: 
+        print("i am stuck")
       
     pub.publish(twist_msg)
     
 
 
 if __name__ == '__main__':
-    
-    avoid_obstcle()
+    try:
+        avoid_obstcle()
+    except rospy.ROSInterruptException:
+        pass
