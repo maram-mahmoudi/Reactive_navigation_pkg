@@ -24,9 +24,9 @@ lookup_table = {
     (1, 0, 0,1): (0.06, 0),     # Obstacle on the right, go forward
     (1, 0, 0,3): (0, -0.1),     # Obstacle on the right, turn left
 
-    (0, 1, 0,2): (0, -0.06),     # Obstacle in front, go left
-    (0, 1, 0,3): (0, 0.06),     # Obstacle in front, go right
-    #(0, 1, 0,0): (0, -0.2),     # Obstacle in front, go backward
+    (0, 1, 0,2): (0, -0.1),     # Obstacle in front, go left
+    (0, 1, 0,3): (0, 0.1),     # Obstacle in front, go right
+    #(0, 1, 0,0): (0.06, 0),     # Obstacle in front, go backward
 
     (0, 0, 1,2): (0, 0.1),      # Obstacle on the left, turn right
     (0, 0, 1,1): (0.06, 0),      # Obstacle on the left, go foward
@@ -34,7 +34,7 @@ lookup_table = {
     (1, 1, 0,0): (0, -0.1),     # Obstacle on the right and front, turn left
     (0, 1, 1,0): (0, 0.1),      # Obstacle in front and left, turn right
     (1, 0, 1,0): (0.06, 0),      # Obstacle on the right and left, go forward
-    (1, 1, 1,0): (0, -0.06)      # Obstacle on all sides, go backward 
+    (1, 1, 1,0): (-0.06, 0)      # Obstacle on all sides, go backward 
 }
 
 
@@ -52,9 +52,9 @@ def avoid_obstcle():
 def divide_zone_callback(data):
     #divide the scan data into zones with a threshhold of 10 
     regions = {
-    'right':       min(min(data.ranges[0:120]), 10),
-    'front':       min(min(data.ranges[120:240]), 10),
-    'left':        min(min(data.ranges[240:360]), 10),
+    'right':       min(min(data.ranges[0:60]), 10),
+    'front':       min(min(data.ranges[60:120]), 10),
+    'left':        min(min(data.ranges[120:180]), 10),
     
     }
 
