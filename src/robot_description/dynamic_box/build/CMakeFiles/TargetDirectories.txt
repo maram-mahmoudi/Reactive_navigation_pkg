@@ -1,0 +1,7 @@
+/home/maram/ros_ws/src/robot_description/dynamic_box/build/CMakeFiles/edit_cache.dir
+/home/maram/ros_ws/src/robot_description/dynamic_box/build/CMakeFiles/integrated_main.dir
+/home/maram/ros_ws/src/robot_description/dynamic_box/build/CMakeFiles/animated_box_4.dir
+/home/maram/ros_ws/src/robot_description/dynamic_box/build/CMakeFiles/animated_box_3.dir
+/home/maram/ros_ws/src/robot_description/dynamic_box/build/CMakeFiles/rebuild_cache.dir
+/home/maram/ros_ws/src/robot_description/dynamic_box/build/CMakeFiles/animated_box_2.dir
+/home/maram/ros_ws/src/robot_description/dynamic_box/build/CMakeFiles/animated_box_1.dir
