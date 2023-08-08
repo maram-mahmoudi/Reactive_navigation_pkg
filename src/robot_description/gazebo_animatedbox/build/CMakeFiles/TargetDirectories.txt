@@ -1,0 +1,5 @@
+/home/maram/ros_ws/src/robot_description/gazebo_animatedbox/build/CMakeFiles/rebuild_cache.dir
+/home/maram/ros_ws/src/robot_description/gazebo_animatedbox/build/CMakeFiles/edit_cache.dir
+/home/maram/ros_ws/src/robot_description/gazebo_animatedbox/build/CMakeFiles/integrated_main.dir
+/home/maram/ros_ws/src/robot_description/gazebo_animatedbox/build/CMakeFiles/independent_listener.dir
+/home/maram/ros_ws/src/robot_description/gazebo_animatedbox/build/CMakeFiles/animated_box.dir

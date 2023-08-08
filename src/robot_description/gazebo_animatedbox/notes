@@ -1,0 +1,11 @@
+link to the tutorial: 
+https://classic.gazebosim.org/tutorials?tut=animated_box&cat=build_robot#SOURCECODE 
+
+when trying to run the command from this tutorial you will get this error: 
+	
+	gzclient: /usr/include/boost/smart_ptr/shared_ptr.hpp:734: typename boost::detail::sp_member_access<T>::type boost::shared_ptr<T>::operator->() const [with T = gazebo::rendering::Camera; typename boost::detail::sp_member_access<T>::type = gazebo::rendering::Camera*]: Assertion `px != 0' failed.
+Aborted (core dumped)
+
+
+to fix it, run this command in the terminal: 
+	source /usr/share/gazebo/setup.bash
